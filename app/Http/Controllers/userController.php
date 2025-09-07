@@ -13,7 +13,7 @@ class userController extends Controller
         {
             if(Auth::user()->user_type=="user")
             {
-                return view('dashboard');
+                return view('user.main');
             }
             else if(Auth::user()->user_type=="admin")
             {

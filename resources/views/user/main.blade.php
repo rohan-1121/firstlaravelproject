@@ -1,12 +1,11 @@
-@include ('front_component.head')
-
+@include('front_component.head')
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            Gift Shop By Sabina
+            Welcome {{Auth::user()->name}}
           </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,18 +37,13 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="{{route('login')}}">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                Login
-              </span>
-            </a>
-            <a href="{{route('register')}}">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                Register
-              </span>
-            </a>
+            <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <button class="btn nav_search-btn" type="submit">
+                {{ __('Log Out') }}
+            </button> &nbsp;&nbsp;
+        </form>
             <a href="">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
@@ -63,17 +57,12 @@
       </nav>
     </header>
     <!-- end header section -->
-     @include('front_component.herosection')
+    @include('front_component.herosection')
   </div>
   <!-- end hero area -->
 
-  @include('front_component.shopsection')
 
-
-
-
-
-
+@include('front_component.shopsection')
 
   <!-- contact section -->
 
@@ -212,4 +201,5 @@
   </section>
 
   <!-- end info section -->
+
 @include('front_component.jquey')
