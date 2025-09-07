@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\productController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +19,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth','admin'])->group(function () {
+    Route::resource('product', productController::class)->only(['create','store','destroy','index','edit','update']);
     Route::resource('category', categoryController::class)->only(['create','store','destroy','index','edit','update']);
 });
+
 
 require __DIR__.'/auth.php';
