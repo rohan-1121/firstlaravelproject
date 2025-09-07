@@ -17,7 +17,7 @@ class userController extends Controller
             }
             else if(Auth::user()->user_type=="admin")
             {
-                return view('backend.admin');
+                return view('backend.main');
             }
         }
     }
