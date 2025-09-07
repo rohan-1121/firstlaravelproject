@@ -24,6 +24,12 @@
                     <li><a href="{{route('product.index')}}">List</a></li>
                   </ul>
                 </li>
+                <li><gory href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Hero Section </a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{route('herosection.create')}}">Add</a></li>
+                    <li><a href="{{route('herosection.index')}}">List</a></li>
+                  </ul>
+                </li>
       </nav>
          <!-- Sidebar Navigation end-->
       <div class="page-content">
