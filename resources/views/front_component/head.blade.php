@@ -11,7 +11,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="frontend/images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('frontend/images/favicon.png')}}" type="image/x-icon">
 
   <title>
     gift shop
@@ -21,12 +21,12 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="frontend/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.css')}}" />
 
   <!-- Custom styles for this template -->
-  <link href="frontend/css/style.css" rel="stylesheet" />
+  <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="frontend/css/responsive.css" rel="stylesheet" />
+  <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet" />
 </head>
 
 <body>

@@ -21,7 +21,11 @@ Route::get('/usershop', function () {
 })->name('usershop');
 
 
+
+
 Route::get('/dashboard',[userController::class,'login'] )->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/productdetails/{id}',[userController::class,'productDetails'])->name('productdetails');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,7 +34,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth','admin'])->group(function () {
-    Route::resource('product', productController::class)->only(['create','store','destroy','index','edit','update']);
+    Route::resource('product', controller: productController::class)->only(['create','store','destroy','index','edit','update']);
     Route::resource('category', categoryController::class)->only(['create','store','destroy','index','edit','update']);
     Route::resource('herosection', heropageController::class)->only(['create','store','destroy','index','edit','update']);
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\productList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,5 +21,11 @@ class userController extends Controller
                 return view('backend.main');
             }
         }
+    }
+
+    public function productDetails($id)
+    {
+        $product=productList::find($id);
+        return view('homeproduct',['list'=>$product]);
     }
 }
