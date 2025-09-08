@@ -1,7 +1,24 @@
   @php
-    $products=App\Models\productList::latest()->take(4)->get();
+    $products=App\Models\productList::get();
     @endphp
 
+@include('front_component.head')
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Gift Shop By Sabina
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        @include('front_component.homenav')
+      </nav>
+    </header>
 
   <section class="shop_section layout_padding">
     <div class="container">
@@ -40,7 +57,7 @@
         @endforeach
       </div>
       <div class="btn-box">
-        <a href="{{route('homeshop')}}">
+        <a href="#">
           View All Products
         </a>
       </div>
@@ -48,3 +65,5 @@
   </section>
 
   <!-- end shop section -->
+    @include('front_component.footer')
+    @include('front_component.jquey')

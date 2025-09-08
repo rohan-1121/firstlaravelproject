@@ -1,20 +1,22 @@
 <!-- slider section -->
-
+ @php
+    $hero=App\Models\dynamic::get();
+@endphp
     <section class="slider_section">
       <div class="slider_container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
+              @foreach ($hero as $list )
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-7">
                     <div class="detail-box"> 
                       <h1>
-                        Welcome To Our <br>
-                        Gift Shop
+                        {{$list->heading}}
                       </h1>
-                      <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                      <p style="text-align: justify">
+                        {{$list->paragraph}}
                       </p>
                       <a href="">
                         Contact Us
@@ -23,11 +25,12 @@
                   </div>
                   <div class="col-md-5 ">
                     <div class="img-box">
-                      <img style="width:600px" src="frontend/images/image3.jpeg" alt="" />
+                      <img style="width:100%; max-width:400px; height:400px; object-fit:cover;" src="{{asset('heroimage/'.$list->image)}}" alt="" />
                     </div>
                   </div>
                 </div>
               </div>
+              @endforeach
             </div>
             
           </div>

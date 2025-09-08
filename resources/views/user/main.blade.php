@@ -12,48 +12,7 @@
           <span class=""></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shop.html">
-                Shop
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="why.html">
-                Why Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-          <div class="user_option">
-            <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <button class="btn nav_search-btn" type="submit">
-                {{ __('Log Out') }}
-            </button> &nbsp;&nbsp;
-        </form>
-            <a href="">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-        </div>
+        @include('front_component.nav')
       </nav>
     </header>
     <!-- end header section -->
@@ -114,91 +73,7 @@
 
    
 
-  <!-- info section -->
-
-  <section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              ABOUT US
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Newsletter
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              NEED HELP
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              CONTACT US
-            </h6>
-            <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Pokhara Nepal </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>9864430735</span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> sabinaacharya@.com</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Sabina Acharya</a>
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
-
-  </section>
+  @include('front_component.footer')
 
   <!-- end info section -->
 

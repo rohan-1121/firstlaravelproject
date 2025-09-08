@@ -11,6 +11,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/shophome', function () {
+    return view('shop');
+})->name('homeshop');
+
+Route::get('/usershop', function () {
+    return view('user.shop');
+})->name('usershop');
+
+
 Route::get('/dashboard',[userController::class,'login'] )->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
