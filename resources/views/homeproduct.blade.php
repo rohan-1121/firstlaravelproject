@@ -13,7 +13,7 @@
           <span class=""></span>
         </button>
 
-        @include('front_component.homenav')
+        @include('front_component.nav')
       </nav>
     </header>
     <!-- end header section -->
@@ -53,9 +53,11 @@
               <input type="number" value="1" min="1" 
           i        style="width:70px; padding:8px; font-size:16px; border:1px solid #ccc; border-radius:5px; text-align:center;">
               
-              <button style="background:#0d6efd; color:white; border:none; padding:12px 30px; font-size:16px; border-radius:6px; cursor:pointer; transition:0.3s;">
+              <a href="{{route('add_to_cart',$list->id)}}">
+                <button style="background:#0d6efd; color:white; border:none; padding:12px 30px; font-size:16px; border-radius:6px; cursor:pointer; transition:0.3s;">
                 Add to Cart
               </button>
+              </a>
             </div>
           </div>
         </div>

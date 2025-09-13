@@ -1,3 +1,12 @@
+@php
+use App\Models\addtoCart;
+use Illuminate\Support\Facades\Auth;
+if(Auth::check() && Auth::user()->user_type=='user')
+{
+  $tp=addtoCart::where('user_id',Auth::id())->count();
+}
+@endphp
+
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item active">
@@ -33,8 +42,9 @@
         </form>
             &nbsp;
             &nbsp;
-            <a href="">
+            <a href="{{ route('cartlist')}}">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              {{$tp}}
             </a>
             <form class="form-inline ">
               <button class="btn nav_search-btn" type="submit">
